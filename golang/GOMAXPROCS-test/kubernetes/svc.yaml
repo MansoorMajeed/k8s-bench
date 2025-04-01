@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-bench
+  labels:
+    app: k8s-bench
+spec:
+  selector:
+    app: k8s-bench
+  ports:
+    - protocol: TCP
+      port: 7000
+      targetPort: 7000
+  type: LoadBalancer

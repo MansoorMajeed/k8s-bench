@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-bench
+  labels:
+    app: k8s-bench
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-bench
+  template:
+    metadata:
+      labels:
+        app: k8s-bench
+    spec:
+      containers:
+      - name: k8s-bench
+        image: golang-bench:f74488c
+        ports:
+        - containerPort: 80
