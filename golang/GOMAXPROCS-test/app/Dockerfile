@@ -1,5 +1,5 @@
 # Build stage
-FROM golang:1.24 as builder
+FROM golang:1.24 AS builder
 
 # Set CGO_ENABLED to 1 for CGO support
 ENV CGO_ENABLED=1

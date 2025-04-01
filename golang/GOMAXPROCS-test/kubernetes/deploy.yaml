@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: k8s-bench
-        image: golang-bench:f74488c
+        image: mansoor1/golang-bench:0.1
         ports:
-        - containerPort: 80
+        - containerPort: 7000
