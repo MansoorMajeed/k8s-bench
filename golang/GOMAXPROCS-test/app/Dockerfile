@@ -11,7 +11,7 @@ COPY . .
 RUN go build -o app .
 
 # Final stage
-FROM scratch
+FROM debian:bookworm-slim
 
 # Copy the binary from the builder stage
 COPY --from=builder /app/app /app
