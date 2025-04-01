@@ -17,6 +17,8 @@ spec:
       containers:
       - name: k8s-bench
         image: mansoor1/golang-bench:0.2
+        env:
+          GOMAXPROCS: "1"
         ports:
         - containerPort: 7000
         resources:
