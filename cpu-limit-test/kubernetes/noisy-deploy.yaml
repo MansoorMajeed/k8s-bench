@@ -27,5 +27,5 @@ spec:
         resources:
           requests:
             cpu: "100m" # Let us have more pods than CPU
-          # limits:
-          #   cpu: "1"
+          limits:
+            cpu: "200m"
