@@ -17,6 +17,7 @@ spec:
       containers:
       - name: noisy-deploy
         image: polinux/stress:latest
+        command: ["stress"]
         args: ["-c", "2"]
         env:
         - name: GOMAXPROCS
