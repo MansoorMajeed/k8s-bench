@@ -24,6 +24,6 @@ spec:
         - containerPort: 7000
         resources:
           requests:
-            cpu: "1" # Let us have more pods than CPU
+            cpu: "100m" # Let us have more pods than CPU
           # limits:
           #   cpu: "1" # No Limits
