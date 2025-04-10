@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: good-deploy
+  labels:
+    app: good-deploy
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: good-deploy
+  template:
+    metadata:
+      labels:
+        app: good-deploy
+    spec:
+      containers:
+      - name: good-deploy
+        image: mansoor1/golang-bench:0.2
+        env:
+        - name: GOMAXPROCS
+          value: "1"
+        ports:
+        - containerPort: 7000
+        resources:
+          requests:
+            cpu: "100m" # Let us have more pods than CPU
+          # limits:
+          #   cpu: "1" # No Limits

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: noisy-deploy
+  labels:
+    app: noisy-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: noisy-deploy
+  template:
+    metadata:
+      labels:
+        app: noisy-deploy
+    spec:
+      containers:
+      - name: noisy-deploy
+        image: polinux/stress:latest
+        command: ["stress"]
+        args: ["-c", "2"]
+        env:
+        - name: GOMAXPROCS
+          value: "1"
+        ports:
+        - containerPort: 7000
+        resources:
+          requests:
+            cpu: "100m" # Let us have more pods than CPU
+          limits:
+            cpu: "100m"
